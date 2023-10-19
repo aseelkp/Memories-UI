@@ -49,4 +49,8 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  cardActions: {
+    display: 'block',
+    textAlign: 'initial',
+  },
 });
