@@ -19,8 +19,6 @@ import { deletePost, likePost } from "../../../actions/posts";
 const Post = ({ post, setCurrentId }) => {
   const classes = makeStyles();
   const dispatch = useDispatch();
-
-  
   const user = JSON.parse(localStorage.getItem("profile"));
   const Likes = () => {
     if (post.likes.length > 0) {
@@ -50,7 +48,7 @@ const Post = ({ post, setCurrentId }) => {
   };
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} raised elevation={6}>
       <CardMedia
         className={classes.media}
         image={post.selectedFile}
