@@ -8,7 +8,7 @@ import {
   Paper,
   TextField,
 } from "@material-ui/core";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import ChipInput from "material-ui-chip-input";
 import { getPosts ,getPostsBySearch } from "../../actions/posts";
@@ -31,7 +31,6 @@ const Home = () => {
   const history = useHistory();
   const page = query.get("page") || 1;
   const searchQuery = query.get("searchQuery");
-  
   const searchPost = () => {
     if (search.trim() || tags) {
       dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
@@ -99,9 +98,10 @@ const Home = () => {
               </Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
+            { (!searchQuery && !tags.length) &&  
             <Paper elevation={6} className={classes.pagination}>
               <Pagination page={page} />
-            </Paper>
+            </Paper>}
           </Grid>
         </Grid>
       </Container>

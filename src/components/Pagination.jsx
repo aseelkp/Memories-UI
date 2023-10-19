@@ -12,6 +12,7 @@ const  Paginate = ({page}) => {
     if(page) dispatch(getPosts(page));
   }, [page]);
 
+
   return (
     <Pagination
       classes={{ ul: classes.ul }}
