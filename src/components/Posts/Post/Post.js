@@ -37,7 +37,7 @@ const Post = ({ post, setCurrentId }) => {
         </>
       ) : (
         <>
-          <ThumbUpAltOutlined fontSize="small" />
+          <ThumbUpAltIcon fontSize="small" />
           &nbsp;{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"}
         </>
       );
@@ -56,7 +56,7 @@ const Post = ({ post, setCurrentId }) => {
 
   return (
     <Card className={classes.card} raised elevation={6}>
-      <ButtonBase className={classes.cardActions} onClick={openPost}>
+      <ButtonBase className={classes.cardAction} onClick={openPost}>
         <CardMedia
           className={classes.media}
           image={post.selectedFile}
@@ -74,7 +74,10 @@ const Post = ({ post, setCurrentId }) => {
             <Button
               style={{ color: "white" }}
               size="small"
-              onClick={() => setCurrentId(post._id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentId(post._id);
+              }}
             >
               <MoreHorizIcon fontSize="medium" />
             </Button>

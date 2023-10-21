@@ -23,17 +23,28 @@ export default makeStyles((theme) => ({
     },
     imageSection: {
       marginLeft: '20px',
+      maxWidth: '40%',
       [theme.breakpoints.down('sm')]: {
         marginLeft: 0,
       },
     },
     recommendedPosts: {
       display: 'flex',
+      flexWrap: 'wrap',
       [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
       },
     },
     loadingPaper: {
       display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
+    },
+    commentsOuterContainer: {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+    commentsInnerContainer: {
+      height: '200px',
+      overflowY: 'auto',
+      marginRight: '30px',
     },
   }));

@@ -13,9 +13,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-
-  console.log(user, "user in navbar");
-
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/");

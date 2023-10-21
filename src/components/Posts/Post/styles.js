@@ -49,7 +49,7 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
-  cardActions: {
+  cardAction: {
     display: 'block',
     textAlign: 'initial',
   },
